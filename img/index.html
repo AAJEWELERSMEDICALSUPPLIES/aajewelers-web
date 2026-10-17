@@ -1,0 +1,859 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A.A JEWELERS&reg; | Medical Equipment &amp; Supplies</title>
+    <!-- Fuente Google Font: Montserrat -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            /* COMBINACIÓN DE COLORES DEL LOGOTIPO */
+            --logo-blue: #1c4b75;
+            --logo-dark-blue: #0f2c4a;
+            --logo-green: #27ae60;
+            --gradient-brand: linear-gradient(135deg, #0f2c4a 0%, #1c4b75 50%, #27ae60 100%);
+            --gradient-button: linear-gradient(135deg, #1c4b75 0%, #27ae60 100%);
+            --light-bg: #f4f8fb;
+            --dark-text: #1e293b;
+            --slate-gray: #475569;
+            --white: #ffffff;
+            --gray-border: #cbd5e1;
+            --error-red: #ef4444;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        body {
+            color: var(--dark-text);
+            background-color: var(--white);
+            line-height: 1.6;
+            -webkit-text-size-adjust: 100%;
+        }
+
+        /* BANNER SUPERIOR PRIVADO ANTI-SPAM */
+        .top-bar {
+            background-color: var(--logo-dark-blue);
+            color: #ffffff;
+            font-size: 0.85rem;
+            padding: 10px 15px;
+            text-align: center;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+
+        /* HEADER MASTER Y LOGO */
+        header {
+            position: sticky;
+            top: 0;
+            background: var(--white);
+            box-shadow: 0 4px 20px rgba(15, 44, 74, 0.12);
+            z-index: 1000;
+            border-bottom: 4px solid var(--logo-green);
+        }
+
+        .header-top {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 15px 10px 5px 10px;
+            background: #ffffff;
+        }
+
+        .master-logo img {
+            height: clamp(100px, 18vw, 190px);
+            width: auto;
+            max-width: 92vw;
+            object-fit: contain;
+            filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.08));
+            transition: transform 0.3s ease;
+        }
+
+        .master-logo img:hover {
+            transform: scale(1.02);
+        }
+
+        /* NAVEGACIÓN ADAPTABLE */
+        .nav-bar {
+            background: var(--white);
+            border-top: 1px solid #e2e8f0;
+            padding: 10px 15px;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 20px;
+            align-items: center;
+            margin: 0 auto;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--logo-dark-blue);
+            font-weight: 700;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: var(--logo-green);
+        }
+
+        .btn-cta {
+            background: var(--gradient-button);
+            color: var(--white);
+            padding: 12px 24px;
+            border-radius: 50px;
+            font-weight: 800;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(28, 75, 117, 0.35);
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            letter-spacing: 0.5px;
+            white-space: nowrap;
+        }
+
+        .btn-cta:hover {
+            background: linear-gradient(135deg, #0f2c4a 0%, #1e8449 100%);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(39, 174, 96, 0.45);
+        }
+
+        /* HERO SECTION */
+        .hero {
+            position: relative;
+            background: linear-gradient(rgba(15, 44, 74, 0.88), rgba(28, 75, 117, 0.82)), url('hero-bg.jpg') center/cover no-repeat;
+            color: var(--white);
+            padding: clamp(60px, 12vw, 110px) 20px;
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: clamp(2rem, 5vw, 3.2rem);
+            font-weight: 900;
+            margin-bottom: 20px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            line-height: 1.2;
+            text-shadow: 0 3px 6px rgba(0,0,0,0.4);
+        }
+
+        .hero p {
+            font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+            margin-bottom: 35px;
+            font-weight: 400;
+            color: #e0f2fe;
+        }
+
+        /* SECCIONES GENERALES */
+        section {
+            padding: clamp(50px, 8vw, 85px) 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: clamp(1.8rem, 4vw, 2.4rem);
+            color: var(--logo-dark-blue);
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            font-weight: 800;
+            letter-spacing: 0.5px;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-size: clamp(1rem, 2vw, 1.15rem);
+            color: var(--slate-gray);
+            margin-bottom: 45px;
+            max-width: 850px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* FILOSOFÍA */
+        .philosophy {
+            background-color: var(--light-bg);
+            border-left: 8px solid var(--logo-green);
+        }
+
+        .philosophy-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 40px;
+            align-items: center;
+        }
+
+        .philosophy-text h2 {
+            font-size: clamp(1.6rem, 3.5vw, 2.2rem);
+            color: var(--logo-blue);
+            margin-bottom: 20px;
+            line-height: 1.3;
+            font-weight: 800;
+        }
+
+        .philosophy-text p {
+            font-size: 1.05rem;
+            color: #334155;
+            margin-bottom: 18px;
+        }
+
+        .philosophy-img img {
+            width: 100%;
+            height: auto;
+            border-radius: 16px;
+            box-shadow: 0 12px 30px rgba(15, 44, 74, 0.18);
+        }
+
+        /* COBERTURA Y GALERÍA */
+        .coverage-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .card {
+            background: var(--white);
+            border-radius: 14px;
+            padding: 30px 22px;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.05);
+            border-top: 6px solid var(--logo-blue);
+            transition: all 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            border-top-color: var(--logo-green);
+            box-shadow: 0 12px 30px rgba(39, 174, 96, 0.2);
+        }
+
+        .card h3 {
+            color: var(--logo-dark-blue);
+            font-size: 1.25rem;
+            margin-bottom: 16px;
+            font-weight: 800;
+        }
+
+        .card ul {
+            list-style-type: none;
+        }
+
+        .card ul li {
+            padding: 7px 0;
+            color: var(--slate-gray);
+            position: relative;
+            padding-left: 22px;
+            font-weight: 600;
+            font-size: 0.92rem;
+        }
+
+        .card ul li::before {
+            content: "\2714";
+            position: absolute;
+            left: 0;
+            color: var(--logo-green);
+            font-weight: 900;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 22px;
+            margin-top: 45px;
+        }
+
+        .gallery-grid img {
+            width: 100%;
+            height: 260px;
+            border-radius: 12px;
+            object-fit: cover;
+            box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-grid img:hover {
+            transform: scale(1.02);
+        }
+
+        /* SERVICIO TÉCNICO NACIONAL */
+        .tech-service {
+            background: var(--gradient-brand);
+            color: var(--white);
+            text-align: center;
+        }
+
+        .tech-service .section-title {
+            color: var(--white);
+        }
+
+        .tech-service p {
+            max-width: 850px;
+            margin: 0 auto 30px;
+            font-size: clamp(1rem, 2vw, 1.2rem);
+            font-weight: 300;
+            color: #e2e8f0;
+        }
+
+        .badge-container {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
+
+        .badge {
+            background: rgba(255,255,255,0.12);
+            padding: 25px 20px;
+            border-radius: 14px;
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(255,255,255,0.25);
+            max-width: 340px;
+            flex: 1;
+            min-width: 260px;
+        }
+
+        .badge h4 {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            color: #a7f3d0;
+            font-weight: 800;
+        }
+
+        .badge p {
+            font-size: 0.95rem;
+            margin-bottom: 0;
+        }
+
+        /* FOOTER PRIVADO ANTI-SPAM */
+        footer {
+            background-color: var(--logo-dark-blue);
+            color: var(--white);
+            padding: 45px 20px 25px 20px;
+            text-align: center;
+        }
+
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 22px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-logo {
+            background-color: #ffffff;
+            padding: 12px 30px;
+            border-radius: 12px;
+            display: inline-block;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+        }
+
+        .footer-logo img {
+            height: 90px;
+            width: auto;
+            object-fit: contain;
+            display: block;
+        }
+
+        .footer-contact-info {
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: #e2e8f0;
+        }
+
+        .footer-contact-info a {
+            color: #7dd3fc;
+            text-decoration: none;
+        }
+
+        .footer-contact-info a:hover {
+            text-decoration: underline;
+        }
+
+        .footer-copy {
+            font-size: 0.85rem;
+            color: #94a3b8;
+            border-top: 1px solid rgba(255,255,255,0.15);
+            padding-top: 20px;
+            width: 100%;
+        }
+
+        /* MODAL ADAPTABLE */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.78);
+            z-index: 2000;
+            justify-content: center;
+            align-items: center;
+            padding: 15px;
+            overflow-y: auto;
+        }
+
+        .modal-content {
+            background-color: var(--white);
+            padding: clamp(20px, 5vw, 40px);
+            border-radius: 16px;
+            max-width: 600px;
+            width: 100%;
+            position: relative;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.35);
+            border-top: 8px solid var(--logo-green);
+            margin: auto;
+            max-height: 90vh;
+            overflow-y: auto;
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 15px;
+            right: 18px;
+            font-size: 1.8rem;
+            cursor: pointer;
+            color: #94a3b8;
+            transition: color 0.2s;
+        }
+
+        .close-btn:hover {
+            color: var(--dark-text);
+        }
+
+        .modal-title {
+            color: var(--logo-dark-blue);
+            font-size: clamp(1.3rem, 3vw, 1.7rem);
+            margin-bottom: 20px;
+            text-align: center;
+            font-weight: 800;
+        }
+
+        .form-group {
+            margin-bottom: 16px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 6px;
+            font-weight: 700;
+            font-size: 0.9rem;
+            color: var(--dark-text);
+        }
+
+        .form-group input, 
+        .form-group select, 
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid var(--gray-border);
+            border-radius: 8px;
+            font-size: 0.95rem;
+            outline: none;
+            transition: border-color 0.3s;
+            background-color: #fff;
+        }
+
+        .form-group input:focus, 
+        .form-group select:focus, 
+        .form-group textarea:focus {
+            border-color: var(--logo-green);
+        }
+
+        /* ESTILO PARA CAMPOS FALTANTES RESALTADOS EN ROJO */
+        .form-group input.error-field,
+        .form-group select.error-field,
+        .form-group textarea.error-field {
+            border: 2px solid var(--error-red) !important;
+            background-color: #fef2f2;
+        }
+
+        .error-alert-banner {
+            display: none;
+            background-color: #fee2e2;
+            color: #991b1b;
+            padding: 12px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            font-weight: 700;
+            font-size: 0.9rem;
+            text-align: center;
+            border: 1px solid #fecaca;
+        }
+
+        .submit-btn {
+            width: 100%;
+            background: var(--gradient-button);
+            color: var(--white);
+            padding: 15px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 800;
+            cursor: pointer;
+            transition: background 0.3s;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-top: 10px;
+        }
+
+        .submit-btn:hover {
+            background: linear-gradient(135deg, #0f2c4a 0%, #1e8449 100%);
+        }
+
+        .success-message {
+            display: none;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .success-message h3 {
+            color: var(--logo-green);
+            font-size: 1.5rem;
+            margin-bottom: 12px;
+            font-weight: 800;
+        }
+
+        @media (max-width: 600px) {
+            .nav-container {
+                flex-direction: column;
+                gap: 10px;
+            }
+            nav ul {
+                gap: 12px;
+            }
+            nav a {
+                font-size: 0.8rem;
+            }
+            .hero {
+                padding: 50px 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- TOP BAR PRIVADA ANTI-SPAM -->
+    <div class="top-bar">
+        A.A JEWELERS&reg; Medical Equipment &amp; Supplies &bull; Canal Exclusivo de Solicitudes y Cotizaciones
+    </div>
+
+    <!-- HEADER MASTER PROTAGONISTA -->
+    <header>
+        <div class="header-top">
+            <div class="master-logo">
+                <img src="logo.png" alt="A.A JEWELERS Medical Equipment &amp; Supplies">
+            </div>
+        </div>
+        <div class="nav-bar">
+            <div class="nav-container">
+                <nav>
+                    <ul>
+                        <li><a href="#inicio">Inicio</a></li>
+                        <li><a href="#nosotros">Nosotros</a></li>
+                        <li><a href="#cobertura">Cobertura</a></li>
+                        <li><a href="#servicio-tecnico">Servicio T&eacute;cnico</a></li>
+                    </ul>
+                </nav>
+                <button class="btn-cta" onclick="openModal()">Solicitar Equipos</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section id="inicio" class="hero">
+        <div class="hero-content">
+            <h1>M&aacute;s all&aacute; de un inventario:<br>Equipando el futuro de la medicina</h1>
+            <p>Soluciones Integrales en Equipamiento M&eacute;dico e Insumos Especializados</p>
+            <button class="btn-cta" onclick="openModal()">Solicitar Cotizaci&oacute;n Personalizada</button>
+        </div>
+    </section>
+
+    <!-- NUESTRA FILOSOFÍA -->
+    <section id="nosotros" class="philosophy">
+        <div class="container">
+            <div class="philosophy-grid">
+                <div class="philosophy-text">
+                    <h2>Rompemos las barreras del cat&aacute;logo tradicional</h2>
+                    <p>Somos una empresa especializada en la venta de equipos e insumos m&eacute;dicos con m&aacute;s de 10 a&ntilde;os de experiencia en el &aacute;rea, enfocada en una filosof&iacute;a de atenci&oacute;n totalmente personalizada.</p>
+                    <p>En nuestro modelo de negocios, convertimos tus necesidades t&eacute;cnicas, marcas y modelos espec&iacute;ficos en nuestra misi&oacute;n de b&uacute;squeda global.</p>
+                </div>
+                <div class="philosophy-img">
+                    <img src="filosofia.jpg" alt="B&uacute;squeda Global A.A Jewelers">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- COBERTURA Y GALERÍA -->
+    <section id="cobertura">
+        <div class="container">
+            <h2 class="section-title">Cobertura Total en las Ramas de la Medicina</h2>
+            <p class="section-subtitle">Abastecemos m&uacute;ltiples especialidades con equipos y suministros de alta precisi&oacute;n para diagn&oacute;stico, tratamiento y cirug&iacute;a.</p>
+            
+            <div class="coverage-grid">
+                <div class="card">
+                    <h3>1. &Aacute;reas Cr&iacute;ticas y Cirug&iacute;a</h3>
+                    <ul>
+                        <li>Cirug&iacute;a General y Especializada</li>
+                        <li>Cuidado Intensivo y Urgencias</li>
+                        <li>Anestesiolog&iacute;a</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h3>2. Diagn&oacute;stico Avanzado</h3>
+                    <ul>
+                        <li>Radiodiagn&oacute;stico e Imagenolog&iacute;a</li>
+                        <li>Laboratorio Cl&iacute;nico y Patolog&iacute;a</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h3>3. Especialidades M&eacute;dicas</h3>
+                    <ul>
+                        <li>Cardiolog&iacute;a</li>
+                        <li>Ginecolog&iacute;a y Obstetricia</li>
+                        <li>Pediatr&iacute;a y Neonatolog&iacute;a</li>
+                        <li>Dermatolog&iacute;a, Est&eacute;tica y Pl&aacute;stica</li>
+                        <li>Oftalmolog&iacute;a y Otorrinolaringolog&iacute;a</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h3>4. Insumos Hospitalarios</h3>
+                    <ul>
+                        <li>Material Desechable</li>
+                        <li>Protecci&oacute;n y Bioseguridad</li>
+                        <li>Mobiliario Cl&iacute;nico</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- GALERÍA DE IMÁGENES -->
+            <div class="gallery-grid">
+                <img src="galeria1.jpg" alt="Equipamiento Quir&uacute;rgico e Instrumental">
+                <img src="galeria2.jpg" alt="Tecnolog&iacute;a de Diagn&oacute;stico y Quir&oacute;fano">
+                <img src="galeria3.jpg" alt="Cat&aacute;logo Integral de Equipos M&eacute;dicos">
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICIO TÉCNICO NACIONAL -->
+    <section id="servicio-tecnico" class="tech-service">
+        <div class="container">
+            <h2 class="section-title">Servicio T&eacute;cnico Especializado a Nivel Nacional</h2>
+            <p>Garantizamos la continuidad operativa de sus instituciones cl&iacute;nicas con soporte t&eacute;cnico capacitado para el cuidado de sus equipos m&eacute;dicos.</p>
+            
+            <div class="badge-container">
+                <div class="badge">
+                    <h4>Mantenimiento Preventivo y Correctivo</h4>
+                    <p>Atenci&oacute;n especializada para asegurar precisi&oacute;n y prolongar la vida &uacute;til de su equipamiento.</p>
+                </div>
+                <div class="badge">
+                    <h4>Oficinas en Caracas</h4>
+                    <p>Sede central administrativa y t&eacute;cnica con despacho inmediato.</p>
+                </div>
+                <div class="badge">
+                    <h4>Cobertura en Toda Venezuela</h4>
+                    <p>Rango de acci&oacute;n y traslado t&eacute;cnico garantizado en todo el pa&iacute;s.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER PRIVADO ANTI-SPAM -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">
+                <img src="logo.png" alt="A.A JEWELERS Medical Equipment &amp; Supplies">
+            </div>
+            
+            <div class="footer-contact-info">
+                <p>Instagram Oficial: <a href="https://instagram.com/aajewelersmedicalsupplies" target="_blank">@aajewelersmedicalsupplies</a></p>
+                <p>Atenci&oacute;n institucional y comercial exclusiva v&iacute;a formulario web.</p>
+            </div>
+
+            <div class="footer-copy">
+                &copy; Todos los derechos reservados. A.A JEWELERS&reg; Medical Equipment &amp; Supplies.
+            </div>
+        </div>
+    </footer>
+
+    <!-- MODAL DE SOLICITUD DE REQUERIMIENTOS -->
+    <div id="requestModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal()">&times;</span>
+            
+            <div id="formContainer">
+                <h3 class="modal-title">Solicitud de Equipos e Insumos</h3>
+                
+                <!-- ALERTA DE CAMPOS OBLIGATORIOS -->
+                <div id="errorAlert" class="error-alert-banner">
+                    ¡Atención! El mensaje no será enviado. Debe rellenar todos los campos obligatorios señalados en rojo.
+                </div>
+
+                <form id="contactForm" action="https://formspree.io/f/xyeklojj" method="POST" onsubmit="handleFormSubmit(event)" novalidate>
+                    <div class="form-group">
+                        <label for="hospital_clinica">Hospital / Cl&iacute;nica / Profesional de la Salud *</label>
+                        <input type="text" id="hospital_clinica" name="Hospital_Clinica_Profesional">
+                    </div>
+                    <div class="form-group">
+                        <label for="contacto">Persona de Contacto *</label>
+                        <input type="text" id="contacto" name="Persona_Contacto">
+                    </div>
+                    <div class="form-group">
+                        <label for="cargo">Cargo *</label>
+                        <input type="text" id="cargo" name="Cargo">
+                    </div>
+                    <div class="form-group">
+                        <label for="telefono">Tel&eacute;fono *</label>
+                        <input type="tel" id="telefono" name="Telefono">
+                    </div>
+                    <div class="form-group">
+                        <label for="pais">Pa&iacute;s *</label>
+                        <input type="text" id="pais" name="Pais">
+                    </div>
+                    <div class="form-group">
+                        <label for="ciudad">Ciudad *</label>
+                        <input type="text" id="ciudad" name="Ciudad">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Correo Electr&oacute;nico *</label>
+                        <input type="email" id="email" name="Email">
+                    </div>
+                    <div class="form-group">
+                        <label for="servicio">&iquest;Qu&eacute; tipo de servicio desea? *</label>
+                        <select id="servicio" name="Tipo_Servicio">
+                            <option value="" disabled selected>Seleccione una opci&oacute;n</option>
+                            <option value="Cotizacion de Insumos">Cotizaci&oacute;n de Insumos M&eacute;dicos</option>
+                            <option value="Cotizacion de Equipos">Cotizaci&oacute;n de Equipos M&eacute;dicos</option>
+                            <option value="Mantenimiento y Reparacion">Mantenimiento y Reparaci&oacute;n de Equipos (Servicio T&eacute;cnico)</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="descripcion">Descripci&oacute;n Breve del Requerimiento *</label>
+                        <textarea id="descripcion" name="Descripcion_Requerimiento" rows="4" placeholder="Indique detalles, marcas, modelos o especificaciones t&eacute;cnicas..."></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">Enviar Solicitud</button>
+                </form>
+            </div>
+
+            <div id="successMessage" class="success-message">
+                <h3>&iexcl;Muchas gracias por su solicitud!</h3>
+                <p>Hemos recibido correctamente la informaci&oacute;n de su requerimiento. En muy poco tiempo, nuestro equipo de asesores especializados se pondr&aacute; en contacto con usted para brindarle la atenci&oacute;n y cotizaci&oacute;n personalizada que necesita.</p>
+                <br>
+                <button class="btn-cta" onclick="closeModal()">Cerrar</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- JAVASCRIPT DE VALIDACIÓN Y ENVÍO -->
+    <script>
+        function openModal() {
+            document.getElementById('requestModal').style.display = 'flex';
+        }
+
+        function closeModal() {
+            document.getElementById('requestModal').style.display = 'none';
+            setTimeout(() => {
+                document.getElementById('formContainer').style.display = 'block';
+                document.getElementById('successMessage').style.display = 'none';
+                document.getElementById('contactForm').reset();
+                clearErrors();
+            }, 300);
+        }
+
+        function clearErrors() {
+            document.getElementById('errorAlert').style.display = 'none';
+            const fields = document.querySelectorAll('#contactForm input, #contactForm select, #contactForm textarea');
+            fields.forEach(field => field.classList.remove('error-field'));
+        }
+
+        function handleFormSubmit(event) {
+            event.preventDefault();
+            clearErrors();
+
+            const fields = document.querySelectorAll('#contactForm input, #contactForm select, #contactForm textarea');
+            let formIsValid = true;
+            let firstErrorField = null;
+
+            fields.forEach(field => {
+                if (!field.value || field.value.trim() === "") {
+                    field.classList.add('error-field');
+                    formIsValid = false;
+                    if (!firstErrorField) {
+                        firstErrorField = field;
+                    }
+                }
+            });
+
+            if (!formIsValid) {
+                document.getElementById('errorAlert').style.display = 'block';
+                if (firstErrorField) {
+                    firstErrorField.focus();
+                }
+                return;
+            }
+
+            const form = event.target;
+            const formData = new FormData(form);
+
+            fetch(form.action, {
+                method: 'POST',
+                body: formData,
+                headers: { 'Accept': 'application/json' }
+            }).then(response => {
+                if (response.ok) {
+                    document.getElementById('formContainer').style.display = 'none';
+                    document.getElementById('successMessage').style.display = 'block';
+                } else {
+                    alert('Hubo un error al procesar la solicitud en el servidor. Por favor intente de nuevo.');
+                }
+            }).catch(error => {
+                alert('Hubo un error de conexión al enviar el formulario.');
+            });
+        }
+
+        window.onclick = function(event) {
+            const modal = document.getElementById('requestModal');
+            if (event.target == modal) {
+                closeModal();
+            }
+        }
+    </script>
+</body>
+</html>
